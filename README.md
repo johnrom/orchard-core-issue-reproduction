@@ -9,3 +9,10 @@ https://github.com/johnrom/orchard-core-issue-reproduction/blob/master/OrchardCo
 Registering Typed HttpClients in the Module context is broken.
 
 https://github.com/johnrom/orchard-core-issue-reproduction/blob/master/OrchardCoreHttpClientTest.Module/Startup.cs#L10-L11
+
+## Reproducing the issue
+
+- Pull this repo
+- Open in VSCode
+- Run launch task `.Net Core Launch (web)`
+- Observe error on page load
