@@ -2,11 +2,11 @@ using System.Net.Http;
 
 namespace OrchardCoreHttpClientTest.Module
 {
-    public class CmsHttpClientRequestingDependency
+    public class PreviouslyCmsHttpClientRequestingDependency
     {
         private readonly HttpClient _httpClient;
 
-        public CmsHttpClientRequestingDependency(HttpClient httpClient)
+        public PreviouslyCmsHttpClientRequestingDependency(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
