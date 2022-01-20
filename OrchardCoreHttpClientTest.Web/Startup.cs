@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OrchardCoreHttpClientTest.Module;
 
 namespace OrchardCoreHttpClientTest.Web
 {
@@ -8,8 +9,6 @@ namespace OrchardCoreHttpClientTest.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            // this is fine
-            services.AddHttpClient<CmsHttpClientRequestingDependency>();
             services.AddOrchardCms();
         }
         

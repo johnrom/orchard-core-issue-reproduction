@@ -7,7 +7,8 @@ namespace OrchardCoreHttpClientTest.Module
     {
         public override void ConfigureServices(IServiceCollection services)
         {
-            // this raises a Null Reference Exception
+            // this is fine
+            services.AddHttpClient<CmsHttpClientRequestingDependency>();
             services.AddHttpClient<ModuleHttpClientRequestingDependency>();
         }
     }

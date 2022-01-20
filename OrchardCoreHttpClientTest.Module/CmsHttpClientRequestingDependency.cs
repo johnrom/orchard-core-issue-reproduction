@@ -1,14 +1,14 @@
 using System.Net.Http;
 
-namespace OrchardCoreHttpClientTest.Web
+namespace OrchardCoreHttpClientTest.Module
 {
     public class CmsHttpClientRequestingDependency
     {
-        private readonly HttpClient httpClient;
+        private readonly HttpClient _httpClient;
 
         public CmsHttpClientRequestingDependency(HttpClient httpClient)
         {
-            this.httpClient = httpClient;
+            _httpClient = httpClient;
         }
     }
 }
