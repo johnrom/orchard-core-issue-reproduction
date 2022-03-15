@@ -1,0 +1,31 @@
+﻿@using OrchardCoreSqliteLockedTablesTest.SqliteConfiguringModule;
+@model IEnumerable<TestViewModel>
+
+@foreach (var test in Model)
+{
+    <h3>@test.Name</h3>
+    <p>@test.Message</p>
+    <ul>
+        @if (@test.ExistingModels.Any())
+        {
+            @foreach (var existingModel in test.ExistingModels)
+            {
+                <li>
+                    <h2>Existing Record</h2>
+                    <dl>
+                        <dt>@existingModel.Id</dt>
+                        <dd>@existingModel.Guid</dd>
+                    </dl>
+                </li>
+            }
+        } else {
+            <li><em>No Existing Records.</em></li>
+        }
+        <li>           
+            <dl>
+                <dt>@test.NewModel.Id</dt>
+                <dd>@test.NewModel.Guid</dd>
+            </dl>
+        </li>
+    </ul>
+}

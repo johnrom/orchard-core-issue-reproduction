@@ -2,5 +2,6 @@ App_Data
 Properties
 bin
 obj
+lib
 
 *.po

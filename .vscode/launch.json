@@ -6,9 +6,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/OrchardCoreHttpClientTest.Web/bin/Debug/net6.0/OrchardCoreHttpClientTest.Web.dll",
+            "program": "${workspaceFolder}/OrchardCoreSqliteLockedTablesTest.Web/bin/Debug/net6.0/OrchardCoreSqliteLockedTablesTest.Web.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/OrchardCoreHttpClientTest.Web",
+            "cwd": "${workspaceFolder}/OrchardCoreSqliteLockedTablesTest.Web",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"

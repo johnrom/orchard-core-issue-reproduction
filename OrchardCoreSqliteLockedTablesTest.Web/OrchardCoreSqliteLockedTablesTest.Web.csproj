@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrchardCoreHttpClientTest.Module\OrchardCoreHttpClientTest.Module.csproj" />
+    <ProjectReference Include="..\OrchardCoreSqliteLockedTablesTest.SqliteConfiguringModule\OrchardCoreSqliteLockedTablesTest.SqliteConfiguringModule.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace OrchardCoreHttpClientTest.Web
+namespace OrchardCoreSqliteLockedTablesTest.Web
 {
     public class Program
     {

@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/OrchardCoreHttpClientTest.Web/OrchardCoreHttpClientTest.Web.csproj",
+                "${workspaceFolder}/OrchardCoreSqliteLockedTablesTest.Web/OrchardCoreSqliteLockedTablesTest.Web.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
