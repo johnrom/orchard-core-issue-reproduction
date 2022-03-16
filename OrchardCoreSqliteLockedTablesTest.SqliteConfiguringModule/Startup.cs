@@ -29,24 +29,6 @@ namespace OrchardCoreSqliteLockedTablesTest.SqliteConfiguringModule
 
         public override void Configure(IApplicationBuilder app, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
         {
-            var store = serviceProvider.GetService<IStore>();
-            var shellSettings = serviceProvider.GetService<ShellSettings>();
-
-            // If we're not using Sqlite DatabaseProvider, don't worry about a thing.
-            if (shellSettings.State == TenantState.Uninitialized || shellSettings["DatabaseProvider"] != "Sqlite")
-            {
-                return;
-            }
-
-            var shellOptions = serviceProvider.GetService<IOptions<ShellOptions>>().Value;
-            var databaseFolder = Path.Combine(shellOptions.ShellsApplicationDataPath, shellOptions.ShellsContainerName, shellSettings.Name);
-            var databaseFile = Path.Combine(databaseFolder, "yessql.db");
-            var connectionString = $"Data Source={databaseFile};Cache=Shared;Pooling=False";
-
-            store.Configuration.ConnectionFactory = new DebuggingYesSqlConnectionFactory(
-                new DbConnectionFactory<SqliteConnection>(connectionString),
-                serviceProvider.GetService<ILogger<DebuggingYesSqlConnectionFactory>>()
-            );
         }
     }
 }
