@@ -1,8 +1,8 @@
 # Orchard Core Issue Reproduction
 
-## YesSql File Unlocked [#11387](https://github.com/OrchardCMS/OrchardCore/issues/11387)
+## YesSql File Unlocked (fixes [#11387](https://github.com/OrchardCMS/OrchardCore/issues/11387))
 
-By replacing the YesSql Store completely using a Connection String with `Pooling=False` from the start (see `OrchardCoreSqliteLockedTablesTest.Web.Startup.ReplaceYesSqlSqliteStore()`), I was able to remove the lock from the `yessql.db` file.
+By replacing the YesSql Store completely using a Connection String with `Pooling=False` from the start (see `OrchardCoreSqliteLockedTablesTest.Web.Startup.ReplaceYesSqlSqliteStore()`), I was able to remove the lock from the `yessql.db` file. This also removes `PoolingJsonContentSerializer` (it is internal and cannot be accessed outside Orchard Core source code anyway).
 
 ## Testing
 
