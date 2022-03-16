@@ -2,6 +2,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -56,8 +57,15 @@ namespace OrchardCoreSqliteLockedTablesTest.Web
                     var databaseFile = Path.Combine(databaseFolder, "yessql.db");
                     Directory.CreateDirectory(databaseFolder);
 
+                    var connectionStringBuilder = new SqliteConnectionStringBuilder
+                    {
+                        DataSource = databaseFile,
+                        Cache = SqliteCacheMode.Shared,
+                        Pooling = false
+                    };
+
                     storeConfiguration
-                        .UseSqLite($"Data Source={databaseFile};Cache=Shared;Pooling=False", IsolationLevel.ReadUncommitted)
+                        .UseSqLite(connectionStringBuilder.ToString(), IsolationLevel.ReadUncommitted)
                         .UseDefaultIdGenerator();
 
                     if (!string.IsNullOrWhiteSpace(shellSettings["TablePrefix"]))
